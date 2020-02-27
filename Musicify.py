@@ -78,7 +78,6 @@ class Musicify:
         index = mode + scale_root + 1
 
         for i in range(0, index):
-            print(list(E))
             E = deque(E)
             E.rotate(-1)
             E[len(F)-1] = E[2] + 5
