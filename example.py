@@ -24,16 +24,6 @@ da = []
 for other in d:
     da.append(int(other))
 
-# Initialize pi queue
-test = deque([next(pi) for j in range(0, len(f))])
-i = len(test)
-
-# Compare sequence against pi
-length = len(test)
-# Output the final amount of digits and sequence found in pi
-#print(i-len(f))
-#print(test)
-
 SharpOrFlat = 0
 mode = 0
 octave = 0
