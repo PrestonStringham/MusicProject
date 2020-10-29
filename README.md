@@ -2,7 +2,6 @@ MusicProject
 
 This project concerns mapping digits to notes of piano keys in MIDI. For some sequence of digits, Musicify maps those digits to any key in any octave using a variety of different "extensions" as there are more digits than notes in a key. This allows one to create infinite melodies using transcendental numbers like pi. You can theoretically make a song of infinite length and varying melodies using different transcendental numbers.
 
-How does it work?
 Consider digits 0-9 and imagine a piano. Pick any 10 keys on the piano and assign it a number. Then, consider a sequence of numbers like, 3.1415... We can play these digits in order and produce some music. Now, computers have a file type for storing music note data called MIDI. Basically, it already has assigned keys on the piano to digits in ascending order. That is, the lowest note on the keyboard, in MIDI, is 0. Then, the next is 1 and so on.
 
 So, we know that 0-9 are already MIDI notes... So, we are done...
@@ -25,3 +24,9 @@ What about the note lengths?
 We can use ANOTHER string of digits to compute the length of the notes. 
 
 So, I can use pi for my melody and eulers number for my note lenghts. My code just strings together the notes and their respective lenghts.
+
+How does it REALLY work?
+
+First, it starts by using the fact that 0-9 are ALREADY MIDI notes. It then converts it to a C Major scale(The most basic one described in the scale section of this description). Then we calculate the numbers for a mode change, but we don't actually shift the notes yet. Then, it calculates the amount of shift for the notes to be in the right key. For example, if the key is set to G Major, it moves the F number and adds one to it, making it F# which turns the scale into G Major. Then we add all of the shift numbers to each digits and then we have finally mapped the digit to the note on the keyboard. In addition, I made it so it goes to one of the higher octaves, so it can easily be heard as 0 - 9 would be mapped to some low notes like C0.
+
+That's it! 
